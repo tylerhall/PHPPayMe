@@ -9,7 +9,7 @@ A few weeks ago there was a Hacker News discussion about a ready-made Rails solu
 the same thing. I thought folks might appreciate a (simpler) PHP solution, so I open sourced my little bit of code.
 Hope you find it useful.
 
-Here's a demo: [http://pay.clickontyler.com](http://clickontyler.com)
+Here's a demo: [http://pay.clickontyler.com](http://pay.clickontyler.com)
 
 ## Setup
 
