@@ -28,7 +28,12 @@
 <html>
 <head>
 	<style type="text/css" media="screen">
-		body { text-align:center; }
+		body { background-color:rgb(0, 139, 223); text-align:center; color:#fff; font-family:verdana; }
+		p { font-size:11px; }
+		p a { color:#fff; }
+		.amount { font-size:36px; }
+		.amount input { font-size:36px; width:5em; text-align:center; }
+		
 		.stripe-button-el {
 		  overflow: hidden;
 		  display: inline-block;
@@ -95,7 +100,7 @@
 	<?PHP if(!isset($_GET['payment'])) : ?>
 	<p>Fill in the amount to pay and click "Pay with Card"<br>All payments are securely processed by <a href="http://stripe.com">Stripe</a></p>
 	<form action="/" method="POST">
-		<p>$<input type="text" name="txtAmount" value="0.00" id="txtAmount"></p>
+		<p class="amount">$<input type="text" name="txtAmount" value="0.00" id="txtAmount"></p>
 		<button id="btnPay" type="submit" class="stripe-button-el">
 			<span style="display:block; min-height:30px;">Pay with Card</span>
 		</button>
@@ -109,6 +114,8 @@
 	<?PHP endif; ?>
 	<script type="text/javascript" charset="utf-8">
 		$('#btnPay').click(function() {
+			$('#btnPay').css('display', 'none');
+
 			var token = function(res) {
 				var input = $('<input type=hidden name=stripeToken />').val(res.id);
 				$('form').append(input).submit();
